@@ -1,11 +1,11 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./user.css";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../store/action";
 
-function User() {
+function User(props) {
   const [user, setuser] = useState([]);
 
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ function User() {
       let persons = res.data;
       persons = persons.flat();
       setuser(persons);
-    //   console.log(persons);
+      //   console.log(persons);
     });
     // console.log(user);
   }, []);
@@ -40,7 +40,8 @@ function User() {
             <td>{i.website}</td>
             <td
               className="vp"
-              onClick={() => dispatch(updateUser(i.id, "pro"))}
+              id={"vp" + i.id}
+              onClick={() => props.setuser(i.id)}
             >
               View Profile
             </td>

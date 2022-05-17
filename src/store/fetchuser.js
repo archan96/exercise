@@ -1,4 +1,4 @@
-const fetchUser = (state="tara", action)=>{
+const fetchUser = (state="lol", action)=>{
     switch (action.type) {
         case 'UPDATEUSER':
           return (state = action.payload);
