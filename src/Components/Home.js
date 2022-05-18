@@ -1,37 +1,51 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 import "./home.css";
-import { useSelector, connect } from "react-redux";
-import { useEffect, useMemo, useRef } from "react";
+import { updateUser } from "../store/action";
+import ModalOne from "./modalOne";
 
 function Home(props) {
-  const user = useSelector((state) => state.user);
-  const type = useSelector((state) => state.type);
+  // const user = useSelector((state) => state.user);
+  // const [contentRef, setContentRef] = useState(null);
 
-  useEffect(() => {
-    console.log(props.id);
-  }, [props.id]);
+  // // const dispatch = useDispatch();
+  // // useEffect(() => {
+  // //   console.log("home" + props.id);
+  // // }, [props]);
+
+  // let mountNode = contentRef?.contentWindow?.document;
+  // const handleFocus = () => {
+  //   console.log(mountNode);
+  //   mountNode.getElementById("1").addEventListener(
+  //     "click",
+  //     () => {
+  //       console.log("one clicked");
+  //     },
+  //     false
+  //   );
+  // };
+  // useEffect(() => {
+  //   // console.log("home" + user);
+
+  //   window.addEventListener("focus", () => handleFocus());
+  // }, []);
+
+  // const button = iframe.contentWindow.getElementById("1");
 
   return (
     <div className="container home">
       <div className="iframe">
         <p>Users Table</p>
-        <iframe
-          src="/user"
-          title="users"
-          name="myframe"
-        ></iframe>
+        <iframe src="/user" title="users" name="myframe" id="iframe"></iframe>
       </div>
       <div className="extrapannel">
-        {user !== "" && type === "pro" && <p>Profile</p>}
+        <p>Profile</p>
         <p>Posts</p>
       </div>
     </div>
   );
 }
 
-const mapStateToProps = (state) => ({
-  user: state.user,
-  // any props you need else
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home;

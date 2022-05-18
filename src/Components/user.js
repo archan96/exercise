@@ -8,7 +8,7 @@ import { updateUser } from "../store/action";
 function User(props) {
   const [user, setuser] = useState([]);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     axios.get(`https://jsonplaceholder.typicode.com/users`).then((res) => {
@@ -19,6 +19,7 @@ function User(props) {
     });
     // console.log(user);
   }, []);
+
   return (
     <div className="container">
       <table>
@@ -38,18 +39,15 @@ function User(props) {
             <td>{i.email}</td>
             <td>{i.phone}</td>
             <td>{i.website}</td>
-            <td
-              className="vp"
-              id={"vp" + i.id}
-              onClick={() => props.setuser(i.id)}
-            >
-              View Profile
+            <td className="vp" id={i.id}>
+              <a href={"/" + i.username} target="_top">
+                View Profile
+              </a>
             </td>
-            <td
-              className="vpost"
-              onClick={() => dispatch(updateUser(i.id, "post"))}
-            >
-              View Posts
+            <td className="vpost">
+              <a href={"/posts/" + i.username} target="_top">
+                View Posts
+              </a>
             </td>
           </tr>
         ))}

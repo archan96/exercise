@@ -1,0 +1,108 @@
+.modalOne{
+    width: 30vw;
+    height: 96vh;
+    position: fixed;
+    right: 10vh;
+    top: 2vh;
+    background-color: white;
+    border-color: rgba(1, 1, 1, 0.5);
+    border: 1px solid;
+    border-radius: 2.5vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.moheader{
+    width: 100%;
+    height: 10vh;
+    margin-top: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+.modalHeader{
+    margin-left: 2.5vw;
+    font-weight: bold;
+    font-size: 3.5vh;
+}
+
+.closebtn{
+    margin-right: 2.5vw;
+    cursor: pointer;
+}
+
+.moName > p{
+    margin-top: 2vw;
+    font-size: 4vh;
+    color: rgba(1, 1, 1, 0.8);
+    font-weight: bold;
+}
+
+.moEmail{
+    margin-top: 2vw;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2.5vw;
+}
+
+.moEmail >p:nth-child(2){
+    margin-top: -2vh;
+    padding: 2vh 2vh;
+    width: 80%;
+    border: 1px solid rgba(1, 1, 1, 0.2);
+    border-radius: 1vh;
+    text-align: left;
+}
+
+.moAdd{
+    /* margin-top: 2vw; */
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2.5vw;
+}
+
+.moAdd >p:nth-child(2){
+    margin-top: -2vh;
+    padding: 2vh 2vh;
+    width: 80%;
+    border: 1px solid rgba(1, 1, 1, 0.2);
+    border-radius: 1vh;
+    text-align: left;
+}
+
+.phone{
+    margin-top: 0;
+}
+
+
+/*MODEL TWO*/
+/*MODEL TWO*/
+.post{
+    width: 90%;
+    background-color: rgba(1, 1, 1, 0.1);
+    border-radius: 1vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: center;
+}
+
+.post >p{
+    width: 90%;
+    text-align: left;
+}
+.post >p:nth-child(1){
+    font-weight: bold;
+}
+/*MODEL TWO*/
+/*MODEL TWO*/
